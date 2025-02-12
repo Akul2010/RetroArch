@@ -6934,14 +6934,6 @@ MSG_HASH(
    "\"Felhasználók\" látható"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_ICON_THUMBNAILS,
-   "Játéklista ikonok"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_ICON_THUMBNAILS,
-   "A játéklista elemeinek ikonjai."
-   )
-MSG_HASH(
    MENU_ENUM_SUBLABEL_SETTINGS_SHOW_USER,
    "A felhasználó beállításai jelenjenek meg."
    )
@@ -12540,14 +12532,6 @@ MSG_HASH(
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SELECT_FROM_PLAYLIST,
    "Kiválasztás játéklistáról"
-   )
-MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESUME,
-   "Folytatás"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESUME,
-   "A futó tartalom folytatása és a gyorsmenü elhagyása."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CHEAT_VIEW_MATCHES,

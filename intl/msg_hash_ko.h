@@ -6994,14 +6994,6 @@ MSG_HASH(
    "'사용자' 표시"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_ICON_THUMBNAILS,
-   "실행목록 아이콘"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_ICON_THUMBNAILS,
-   "표시할 실행목록 아이콘 섬네일의 종류입니다."
-   )
-MSG_HASH(
    MENU_ENUM_SUBLABEL_SETTINGS_SHOW_USER,
    "'사용자' 설정을 표시합니다."
    )
@@ -12884,14 +12876,6 @@ MSG_HASH(
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SELECT_FROM_PLAYLIST,
    "실행목록에서 선택"
-   )
-MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESUME,
-   "이어하기"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESUME,
-   "빠른 메뉴를 종료하고 현재 실행 중인 콘텐츠를 이어합니다."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CHEAT_VIEW_MATCHES,

@@ -6806,14 +6806,6 @@ MSG_HASH(
    "[ユーザー] を表示"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_ICON_THUMBNAILS,
-   "プレイリストアイコン"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_ICON_THUMBNAILS,
-   "表示するプレイリストアイコンサムネイルの種類です。"
-   )
-MSG_HASH(
    MENU_ENUM_SUBLABEL_SETTINGS_SHOW_USER,
    "[ユーザー] 設定を表示します。"
    )
@@ -12584,14 +12576,6 @@ MSG_HASH(
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SELECT_FROM_PLAYLIST,
    "プレイリストから選択"
-   )
-MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESUME,
-   "再開"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESUME,
-   "クイックメニューを閉じて現在動作中のアプリを再開します。"
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CHEAT_VIEW_MATCHES,

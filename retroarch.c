@@ -2988,7 +2988,19 @@ bool command_event(enum event_command cmd, void *data)
    switch (cmd)
    {
       case CMD_EVENT_SAVE_FILES:
-         event_save_files(runloop_st->flags & RUNLOOP_FLAG_USE_SRAM);
+         event_save_files(
+               runloop_st->flags & RUNLOOP_FLAG_USE_SRAM,
+#if defined(HAVE_ZLIB)
+               settings->bools.save_file_compression,
+#else
+               false,
+#endif
+#ifdef HAVE_CHEATS
+               settings->paths.path_cheat_database
+#else
+               NULL
+#endif
+               );
          break;
       case CMD_EVENT_OVERLAY_UNLOAD:
 #ifdef HAVE_OVERLAY
@@ -3416,7 +3428,7 @@ bool command_event(enum event_command cmd, void *data)
             res = false;
          else if (input_st->bsv_movie_state.flags & BSV_FLAG_MOVIE_PLAYBACK)
             res = movie_stop(input_st);
-         if (!runloop_get_current_replay_path(replay_path, sizeof(replay_path)))
+         if (!runloop_get_replay_path(replay_path, sizeof(replay_path), settings->ints.replay_slot))
             res = false;
          if (res)
             res = movie_start_playback(input_st, replay_path);
@@ -3771,7 +3783,14 @@ bool command_event(enum event_command cmd, void *data)
                      RARCH_NETPLAY_CTL_IS_ENABLED, NULL))
 #endif
             {
-               if (autosave_init())
+               if (autosave_init(
+#if defined(HAVE_ZLIB)
+                        settings->bools.save_file_compression,
+#else
+                        false,
+#endif
+                        settings->uints.autosave_interval)
+                     )
                   runloop_st->flags |=  RUNLOOP_FLAG_AUTOSAVE;
                else
                   runloop_st->flags &= ~RUNLOOP_FLAG_AUTOSAVE;
@@ -5794,6 +5813,7 @@ void main_exit(void *args)
  **/
 int rarch_main(int argc, char *argv[], void *data)
 {
+   settings_t *settings;
    struct rarch_state *p_rarch         = &rarch_st;
    runloop_state_t *runloop_st         = runloop_state_get_ptr();
    video_driver_state_t *video_st      = video_state_get_ptr();
@@ -5875,7 +5895,18 @@ int rarch_main(int argc, char *argv[], void *data)
          return 1;
    }
 
-   ui_companion_driver_init_first();
+   settings = config_get_ptr();
+
+   ui_companion_driver_init_first(
+#ifdef HAVE_QT
+         settings->bools.desktop_menu_enable,
+         settings->bools.ui_companion_toggle,
+#else
+         false,
+         false,
+#endif
+         settings->bools.ui_companion_start_on_boot
+         );
 #if HAVE_CLOUDSYNC
    task_push_cloud_sync();
 #endif
@@ -7751,7 +7782,7 @@ bool retroarch_main_init(int argc, char *argv[])
    wifi_driver_ctl(RARCH_WIFI_CTL_FIND_DRIVER, NULL);
 #endif
 #ifdef HAVE_CLOUDSYNC
-   cloud_sync_find_driver(settings,
+   cloud_sync_find_driver(settings->arrays.cloud_sync_driver,
          "cloud sync driver", verbosity_enabled);
 #endif
    location_driver_find_driver(settings->arrays.location_driver,

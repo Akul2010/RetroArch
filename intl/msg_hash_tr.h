@@ -6954,14 +6954,6 @@ MSG_HASH(
    "'Kullanıcıyı' Göster"
    )
 MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_ICON_THUMBNAILS,
-   "Oynatma Listesi Simgeleri"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_ICON_THUMBNAILS,
-   "Görüntülenecek Oynatma Listesi simgesinin küçük resminin türü."
-   )
-MSG_HASH(
    MENU_ENUM_SUBLABEL_SETTINGS_SHOW_USER,
    "'Kullanıcı' ayarlarını gösterin."
    )
@@ -12872,14 +12864,6 @@ MSG_HASH(
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_SELECT_FROM_PLAYLIST,
    "Bir oynatma listesinden seç"
-   )
-MSG_HASH(
-   MENU_ENUM_LABEL_VALUE_RESUME,
-   "Devam"
-   )
-MSG_HASH(
-   MENU_ENUM_SUBLABEL_RESUME,
-   "Çalışan içeriği devam ettirip Hızlı Menüden çıkın."
    )
 MSG_HASH(
    MENU_ENUM_LABEL_VALUE_CHEAT_VIEW_MATCHES,
